@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    let dice = ["1", "2", "3", "4", "5", "6"]
+    @State private var number = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Button(action: {
+                    self.number = self.dice.randomElement()!
+                }) {
+                    Text("Dice")
+                        .font(.largeTitle)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Capsule().foregroundColor(.gray))
+                    }
+        
+        Text(number)
+            .font(.system(size: 100))
+            .fontWeight(.bold)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 
